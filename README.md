@@ -1,3 +1,3 @@
-# handleidingen
+# Quarto book met handleidingen voor R
 
-# Quarto book van handleidingen voor R
+# Work in progress.
