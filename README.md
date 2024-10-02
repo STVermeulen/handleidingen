@@ -1,3 +1,5 @@
-# Quarto book met handleidingen voor R
+# Handleiding voor R(Studio)
 
-# Work in progress.
+Klik op onderstaande link om het Quarto book met handleidingen te openen:
+
+https://stvermeulen.github.io/handleidingen/
