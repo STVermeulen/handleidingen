@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Handleidingen voor R(Studio)",
+    "section": "",
+    "text": "Toelichting\nDit is een Quarto book met verschillende handleidingen voor het gebruik van R(Studio). Aan de linkerkant vind je de verschillende hoofdstukken van dit Quarto book en aan de rechterkant vind je de navigatie binnen een hoofdstuk.\nWil je meer weten over Quarto books? Kijk dan op: https://quarto.org/docs/books.",
+    "crumbs": [
+      "Toelichting"
+    ]
+  },
+  {
+    "objectID": "swing.html",
+    "href": "swing.html",
+    "title": "1  Swing",
+    "section": "",
+    "text": "1.1 Importbestanden platte data\nflowchart LR\n  A[Databestand] --&gt; C{R script}\n  B[Excel Configuratie] --&gt; C{R script}\n  C --&gt; D(Swing Importbestand)\n  C --&gt; E(Swing Metadata)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Swing</span>"
+    ]
+  },
+  {
+    "objectID": "swing.html#importbestanden-kubusdata",
+    "href": "swing.html#importbestanden-kubusdata",
+    "title": "1  Swing",
+    "section": "1.2 Importbestanden kubusdata",
+    "text": "1.2 Importbestanden kubusdata\nOp de GitHub pagina van GGData staat een script, om met behulp van een wizard, kubusdata te maken.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Swing</span>"
+    ]
+  },
+  {
+    "objectID": "swing.html#objecten",
+    "href": "swing.html#objecten",
+    "title": "1  Swing",
+    "section": "1.3 Objecten",
+    "text": "1.3 Objecten\nNaast het opnemen van data voor een bepaald gebiedsniveau kun je ook data opnemen op objectniveau. Bij objecten kun je denken aan bijvoorbeeld bedrijfslocaties of scholen. Lees voor meer informatie het artikel op de helppagina van ABF: Swing Studio objecten\nVoordat data op objectniveau kan worden toegevoegd moeten eerst een nieuw objectniveau worden toegevoegd.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Swing</span>"
+    ]
+  },
+  {
+    "objectID": "databronnen.html",
+    "href": "databronnen.html",
+    "title": "2  Databronnen",
+    "section": "",
+    "text": "2.1 CBS data",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Databronnen</span>"
+    ]
+  },
+  {
+    "objectID": "databronnen.html#geodata",
+    "href": "databronnen.html#geodata",
+    "title": "2  Databronnen",
+    "section": "2.2 Geodata",
+    "text": "2.2 Geodata\nOp de website van Publieke Dienstverlening op de Kaart (PDOK) is een groot aantal geodatasets te vinden. Je vindt hier bijvoorbeeld ook PC4 en PC6 geodatasets om op postcodeniveau kaarten te maken. Om de API te bevragen kun je gebruikmaken van het sf package.\n\nlibrary(sf)\nlibrary(tidyverse)\n\nVervolgens kun je met de functie st_read de API bevragen. In onderstaand voorbeeld worden de GGD regio’s uit 2024 opgehaald (op basis van de CBS gebiedsindelingen).\n\nGGDregios &lt;- st_read('https://service.pdok.nl/cbs/gebiedsindelingen/2024/wfs/v1_0?request=GetFeature&service=WFS&version=1.1.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=gebiedsindelingen:ggdregio_gegeneraliseerd')\n\nDe kolom geometry bevat de ruimtelijke informatie die nodig is om een kaart te genereren. hieronder zie je voor de eerste 5 rijen de kolommen statnaam en geometry. In geometry zie je\n\nGGDregios %&gt;%\n  select(statnaam, geometry) %&gt;%\n  slice(1:5) %&gt;%\n  as_tibble()\n\n# A tibble: 5 × 2\n  statnaam                                                              geometry\n  &lt;chr&gt;                                                       &lt;MULTIPOLYGON [m]&gt;\n1 GGD Groningen                 (((276667.5 585212.5, 276560.6 585160.7, 276464…\n2 GGD Drenthe                   (((228989.6 579630, 229126 579625, 229818.6 579…\n3 GGD IJsselland                (((182721.3 511713.8, 182820.1 511545.9, 182455…\n4 GGD Twente                    (((242348.7 501421.4, 243726.8 500646.3, 244005…\n5 GGD Noord- en Oost-Gelderland (((169902.6 486170, 169760.9 486005.7, 169593.8…",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Databronnen</span>"
+    ]
+  }
+]
