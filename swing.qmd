@@ -1,0 +1,29 @@
+---
+format: 
+  html:
+    link-external-icon: true
+    link-external-newwindow: true
+    code-overflow: wrap
+---
+
+# Swing
+
+## Importbestanden platte data
+
+```{mermaid}
+flowchart LR
+  A[Databestand] --> C{R script}
+  B[Excel Configuratie] --> C{R script}
+  C --> D(Swing Importbestand)
+  C --> E(Swing Metadata)
+```
+
+## Importbestanden kubusdata
+
+Op de GitHub pagina van GGData staat een [script](https://github.com/ggdatascience/swing_kubusdata_wizard), om met behulp van een wizard, kubusdata te maken.
+
+## Objecten
+
+Naast het opnemen van data voor een bepaald gebiedsniveau kun je ook data opnemen op objectniveau. Bij objecten kun je denken aan bijvoorbeeld bedrijfslocaties of scholen. Lees voor meer informatie het artikel op de helppagina van ABF: [Swing Studio objecten](https://abfresearch.freshdesk.com/support/solutions/articles/103000238815-swing-studio-objecten)
+
+Voordat data op objectniveau kan worden toegevoegd moeten eerst een nieuw objectniveau worden toegevoegd.

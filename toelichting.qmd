@@ -1,0 +1,13 @@
+---
+format: 
+  html:
+    link-external-icon: true
+    link-external-newwindow: true
+    code-overflow: wrap
+---
+
+# Toelichting {.unnumbered}
+
+Dit is een Quarto book met verschillende handleidingen voor het gebruik van R(Studio). Aan de linkerkant vind je de verschillende hoofdstukken van dit Quarto book en aan de rechterkant vind je de navigatie binnen een hoofdstuk.
+
+Wil je meer weten over Quarto books? Kijk dan op: <https://quarto.org/docs/books>.

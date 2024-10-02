@@ -1,0 +1,37 @@
+---
+format: 
+  html:
+    link-external-icon: true
+    link-external-newwindow: true
+    code-overflow: wrap
+---
+
+# Databronnen
+
+## CBS data
+
+## Geodata
+
+Op de website van Publieke Dienstverlening op de Kaart ([PDOK](https://www.pdok.nl/datasets)) is een groot aantal geodatasets te vinden. Je vindt hier bijvoorbeeld ook PC4 en PC6 geodatasets om op postcodeniveau kaarten te maken. Om de API te bevragen kun je gebruikmaken van het `sf` package.
+
+```{r}
+#| output: false
+library(sf)
+library(tidyverse)
+```
+
+Vervolgens kun je met de functie `st_read` de API bevragen. In onderstaand voorbeeld worden de GGD regio's uit 2024 opgehaald (op basis van de CBS gebiedsindelingen).
+
+```{r}
+#| output: false
+GGDregios <- st_read('https://service.pdok.nl/cbs/gebiedsindelingen/2024/wfs/v1_0?request=GetFeature&service=WFS&version=1.1.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=gebiedsindelingen:ggdregio_gegeneraliseerd')
+```
+
+De kolom `geometry` bevat de ruimtelijke informatie die nodig is om een kaart te genereren. hieronder zie je voor de eerste 5 rijen de kolommen `statnaam` en `geometry`. In `geometry` zie je 
+
+```{r}
+GGDregios %>%
+  select(statnaam, geometry) %>%
+  slice(1:5) %>%
+  as_tibble()
+```
